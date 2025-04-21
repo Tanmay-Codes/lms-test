@@ -4,6 +4,7 @@ import { store } from './lib/redux/store';
 import { ThemeProvider } from './components/ThemeProvider';
 import { AuthProvider } from './lib/auth-context';
 import { ProtectedRoute } from './components/ProtectedRoute';
+import { Toaster } from 'react-hot-toast';
 
 // Layouts
 import { DashboardLayout } from './layouts/DashboardLayout';
@@ -41,6 +42,13 @@ function App() {
       <ThemeProvider>
         <AuthProvider>
           <Router>
+            <Toaster position="top-right" toastOptions={{
+              duration: 3000,
+              style: {
+                background: '#333',
+                color: '#fff',
+              },
+            }} />
             <Routes>
               {/* Redirect root to dashboard or login */}
               <Route

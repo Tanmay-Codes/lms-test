@@ -1,0 +1,15 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+
+# Your rule content
+
+- file pattern matches *.jsx *.js *.css
+
+- use best practices with react. note any new component or page name with .jsx extension should follow convention like 'MyComponent.jsx'
+- When creating a feature note that it can have complete CRUD abilities, so when creating buttons like manage, add Button or something similar, complete the full functionality
+- note keep the best ui UX practices, user acessibility, unique but intuitive design, code should be clean
+- Components sould be reuseable, always check first if the component file exist and can be reused before actually creating a new component
+- when creating a new feature or new update, always check to update the files dummyData.js and file README 2.md where all the details are written as in support to create the backend later.

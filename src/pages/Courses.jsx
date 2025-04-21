@@ -22,7 +22,7 @@ export function Courses() {
   const dispatch = useDispatch();
   const { user } = useAuth();
   const [searchTerm, setSearchTerm] = useState('');
-  const [filter, setFilter] = useState('all');
+  const [activeTab, setActiveTab] = useState('all');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   
   // Get the filtered teacher ID from Redux
@@ -46,9 +46,9 @@ export function Courses() {
     
     // Status filter
     let matchesStatusFilter = true;
-    if (filter === 'active') matchesStatusFilter = course.status === 'active';
-    if (filter === 'upcoming') matchesStatusFilter = course.status === 'upcoming';
-    if (filter === 'completed') matchesStatusFilter = course.status === 'completed';
+    if (activeTab === 'active') matchesStatusFilter = course.status === 'active';
+    if (activeTab === 'upcoming') matchesStatusFilter = course.status === 'upcoming';
+    if (activeTab === 'completed') matchesStatusFilter = course.status === 'completed';
     
     // Teacher filter (for admin only)
     let matchesTeacherFilter = true;
@@ -87,6 +87,10 @@ export function Courses() {
         ))}
       </div>
     );
+  };
+  
+  const handleTabChange = (value) => {
+    setActiveTab(value);
   };
   
   return (
@@ -165,12 +169,12 @@ export function Courses() {
         </div>
       )}
       
-      <Tabs defaultValue="all" className="space-y-4">
+      <Tabs value={activeTab} onValueChange={handleTabChange} className="space-y-4">
         <TabsList>
-          <TabsTrigger value="all" onClick={() => setFilter('all')}>All Courses</TabsTrigger>
-          <TabsTrigger value="active" onClick={() => setFilter('active')}>Active</TabsTrigger>
-          <TabsTrigger value="upcoming" onClick={() => setFilter('upcoming')}>Upcoming</TabsTrigger>
-          <TabsTrigger value="completed" onClick={() => setFilter('completed')}>Completed</TabsTrigger>
+          <TabsTrigger value="all">All Courses</TabsTrigger>
+          <TabsTrigger value="active">Active</TabsTrigger>
+          <TabsTrigger value="upcoming">Upcoming</TabsTrigger>
+          <TabsTrigger value="completed">Completed</TabsTrigger>
         </TabsList>
         <TabsContent value="all" className="space-y-4">
           {renderCourseList()}
