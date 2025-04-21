@@ -1,0 +1,355 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: #ffffff;
+    --foreground: #0f172a;
+    --card: #ffffff;
+    --card-foreground: #0f172a;
+    --popover: #ffffff;
+    --popover-foreground: #0f172a;
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --secondary: #f1f5f9;
+    --secondary-foreground: #1e293b;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    --accent: #f1f5f9;
+    --accent-foreground: #1e293b;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #e2e8f0;
+    --input: #e2e8f0;
+    --ring: #3b82f6;
+    --radius: 0.5rem;
+
+    /* Music theme colors */
+    --note-blue: #3b82f6;
+    --note-purple: #8b5cf6;
+    --note-pink: #ec4899;
+    --note-red: #ef4444;
+    --note-orange: #f97316;
+    --note-yellow: #eab308;
+    --note-green: #22c55e;
+
+    /* Jamclef custom theme colors - Default is blue */
+    --jamclef-50: #eff6ff;
+    --jamclef-100: #dbeafe;
+    --jamclef-200: #bfdbfe;
+    --jamclef-300: #93c5fd;
+    --jamclef-400: #60a5fa;
+    --jamclef-500: #3b82f6;
+    --jamclef-600: #2563eb;
+    --jamclef-700: #1d4ed8;
+    --jamclef-800: #1e40af;
+    --jamclef-900: #1e3a8a;
+    --jamclef-950: #172554;
+
+    /* RGB values for animations */
+    --primary-rgb: 59, 130, 246;
+  }
+
+  .dark {
+    --background: #0f172a;
+    --foreground: #f8fafc;
+    --card: #1e293b;
+    --card-foreground: #f8fafc;
+    --popover: #1e293b;
+    --popover-foreground: #f8fafc;
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --secondary: #334155;
+    --secondary-foreground: #f8fafc;
+    --muted: #334155;
+    --muted-foreground: #94a3b8;
+    --accent: #1e293b;
+    --accent-foreground: #f8fafc;
+    --destructive: #ef4444;
+    --destructive-foreground: #f8fafc;
+    --border: #334155;
+    --input: #334155;
+    --ring: #3b82f6;
+
+    /* Music theme colors - darker variants */
+    --note-blue: #2563eb;
+    --note-purple: #7c3aed;
+    --note-pink: #db2777;
+    --note-red: #dc2626;
+    --note-orange: #ea580c;
+    --note-yellow: #ca8a04;
+    --note-green: #16a34a;
+
+    /* Jamclef custom theme colors - Dark mode */
+    --jamclef-50: #eff6ff;
+    --jamclef-100: #dbeafe;
+    --jamclef-200: #bfdbfe;
+    --jamclef-300: #93c5fd;
+    --jamclef-400: #60a5fa;
+    --jamclef-500: #3b82f6;
+    --jamclef-600: #2563eb;
+    --jamclef-700: #1d4ed8;
+    --jamclef-800: #1e40af;
+    --jamclef-900: #1e3a8a;
+    --jamclef-950: #172554;
+
+    /* RGB values for animations */
+    --primary-rgb: 59, 130, 246;
+  }
+
+  /* Purple Theme */
+  .theme-purple {
+    --primary: #8b5cf6;
+    --primary-foreground: #ffffff;
+    --ring: #8b5cf6;
+
+    --jamclef-50: #faf5ff;
+    --jamclef-100: #f3e8ff;
+    --jamclef-200: #e9d5ff;
+    --jamclef-300: #d8b4fe;
+    --jamclef-400: #c084fc;
+    --jamclef-500: #a855f7;
+    --jamclef-600: #9333ea;
+    --jamclef-700: #7e22ce;
+    --jamclef-800: #6b21a8;
+    --jamclef-900: #581c87;
+    --jamclef-950: #3b0764;
+
+    /* RGB values for animations */
+    --primary-rgb: 139, 92, 246;
+  }
+
+  /* Green Theme */
+  .theme-green {
+    --primary: #22c55e;
+    --primary-foreground: #ffffff;
+    --ring: #22c55e;
+
+    --jamclef-50: #f0fdf4;
+    --jamclef-100: #dcfce7;
+    --jamclef-200: #bbf7d0;
+    --jamclef-300: #86efac;
+    --jamclef-400: #4ade80;
+    --jamclef-500: #22c55e;
+    --jamclef-600: #16a34a;
+    --jamclef-700: #15803d;
+    --jamclef-800: #166534;
+    --jamclef-900: #14532d;
+    --jamclef-950: #052e16;
+
+    /* RGB values for animations */
+    --primary-rgb: 34, 197, 94;
+  }
+
+  /* Orange Theme */
+  .theme-orange {
+    --primary: #f97316;
+    --primary-foreground: #ffffff;
+    --ring: #f97316;
+
+    --jamclef-50: #fff7ed;
+    --jamclef-100: #ffedd5;
+    --jamclef-200: #fed7aa;
+    --jamclef-300: #fdba74;
+    --jamclef-400: #fb923c;
+    --jamclef-500: #f97316;
+    --jamclef-600: #ea580c;
+    --jamclef-700: #c2410c;
+    --jamclef-800: #9a3412;
+    --jamclef-900: #7c2d12;
+    --jamclef-950: #431407;
+
+    /* RGB values for animations */
+    --primary-rgb: 249, 115, 22;
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Custom styles for music-themed components */
+  .piano-key {
+    @apply h-16 border border-border relative transition-all;
+  }
+  
+  .piano-key.white {
+    @apply bg-white w-12;
+  }
+  
+  .piano-key.black {
+    @apply bg-black w-8 h-10 absolute -right-4 top-0 z-10;
+  }
+  
+  .music-note {
+    @apply inline-flex items-center justify-center h-8 w-8 rounded-full text-white;
+  }
+  
+  .music-note.note-c { @apply bg-note-blue; }
+  .music-note.note-d { @apply bg-note-purple; }
+  .music-note.note-e { @apply bg-note-pink; }
+  .music-note.note-f { @apply bg-note-red; }
+  .music-note.note-g { @apply bg-note-orange; }
+  .music-note.note-a { @apply bg-note-yellow; }
+  .music-note.note-b { @apply bg-note-green; }
+}
+
+/* Custom styles */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.time-slot {
+  @apply p-2 rounded-md border border-border hover:border-primary transition-colors;
+}
+
+.time-slot.available {
+  @apply bg-green-100 dark:bg-green-900 dark:bg-opacity-20 border-green-300 dark:border-green-700;
+}
+
+.time-slot.booked {
+  @apply bg-red-100 dark:bg-red-900 dark:bg-opacity-20 border-red-300 dark:border-red-700;
+}
+
+.time-slot.selected {
+  @apply bg-primary bg-opacity-20 border-primary;
+}
+
+/* Aceternity UI inspired styles */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.rotate-y-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.rotate-y-3d:hover {
+  transform: rotateY(10deg);
+}
+
+.glow-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-effect::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    rgba(var(--primary-rgb), 0) 0%,
+    rgba(var(--primary-rgb), 0.1) 25%, 
+    rgba(var(--primary-rgb), 0.2) 50%,
+    rgba(var(--primary-rgb), 0.1) 75%,
+    rgba(var(--primary-rgb), 0) 100%
+  );
+  animation: rotate 8s linear infinite;
+  z-index: -1;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-gradient {
+  animation: gradient 8s linear infinite;
+  background-size: 200% 200%;
+  background-image: linear-gradient(
+    -45deg,
+    var(--primary) 0%,
+    var(--primary) 25%,
+    var(--secondary) 50%,
+    var(--primary) 75%,
+    var(--primary) 100%
+  );
+}
+
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0.5) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Music staff lines */
+.staff-lines {
+  position: relative;
+  height: 40px;
+  width: 100%;
+}
+
+.staff-lines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 7px,
+    var(--border) 7px,
+    var(--border) 8px
+  );
+  opacity: 0.5;
+}
+
+/* Keyframes animations */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+} 
