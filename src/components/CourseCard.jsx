@@ -117,10 +117,10 @@ export function CourseCard({ course, showActions = true }) {
                 size="sm" 
                 onClick={(e) => {
                   e.stopPropagation(); // Prevent card click
-                  setShowModal(true);
                 }}
+                asChild
               >
-                View Details
+                <Link to={`/course-management/edit/${course.id}`}>Manage</Link>
               </Button>
             )}
           </div>
