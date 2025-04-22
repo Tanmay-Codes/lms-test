@@ -289,10 +289,9 @@ export function Schedule() {
     
     return { width, left };
   };
-
+//This function renders the events for a specific day (effects in week view events)
   const renderDayEvents = (day) => {
     const eventsForDay = getEventsForDay(day);
-    
     return eventsForDay.map((event, index) => {
       const { top, height } = calculateEventPosition(event);
       const { width, left } = calculateOverlappingEventStyles(eventsForDay, event, index);
@@ -368,7 +367,7 @@ export function Schedule() {
       </div>
     );
   };
-
+//This function renders the week view (effects in day view events)
   const renderWeekView = () => {
     const days = weekDays;
     
@@ -474,7 +473,7 @@ export function Schedule() {
                       style={{ top: `${hourIndex * HOUR_HEIGHT}px`, height: `${HOUR_HEIGHT}px` }}
                     />
                   ))}
-                
+
                   {/* Current time indicator */}
                   <div 
                     ref={currentTimeRef}
